@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="68dp"
+
+    android:background="@drawable/list_item_rounded">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vitali Akbarov"
+        android:layout_marginTop="6dp"
+
+        android:layout_marginStart="20dp"
+        android:textSize="25sp"
+        android:id="@+id/full_name_list_view"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="28"
+        android:textDirection="locale"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/full_name_list_view"
+        android:layout_marginStart="80dp"
+        android:id="@+id/age_list_view"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textDirection="locale"
+        android:text="Professional"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/full_name_list_view"
+        android:layout_toEndOf="@+id/age_list_view"
+
+        android:layout_marginStart="70dp"
+        android:id="@+id/level_list_view"/>
+</RelativeLayout>

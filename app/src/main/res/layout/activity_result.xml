@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/result_activity"
+    android:background="#b2d347"
+    tools:context=".activities.ResultActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:src="@drawable/my_icon"
+        android:id="@+id/image_view_logo"
+        android:layout_margin="16dp"
+
+        />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/image_view_logo"
+        android:background="#b2d347"
+        android:textColor="@color/textColor"
+        android:id="@+id/list_view_result_activity">
+
+
+    </ListView>
+
+</RelativeLayout>

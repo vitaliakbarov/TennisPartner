@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TennisPartner</string>
+<string name="register">Register</string>
+<string name="enter_your_email">Enter your email</string>
+<string name="enter_password">Enter password</string>
+<string name="confirm_password">Confirm password</string>
+<string name="already_registed">Already registered?</string>
+<string name="login">Login</string>
+<string name="forget_password">Forget your password?</string>
+<string name="forget_password_lable">Forget password</string>
+<string name="create_new_password">Create new password</string>
+<string name="profile">Profile</string>
+<string name="first_name">First name...</string>
+<string name="last_name">Last name...</string>
+<string name="phone_number">Phone number...</string>
+<string name="age">Age...</string>
+<string name="ageP">Age</string>
+<string name="gender">Gender </string>
+<string name="male">Male</string>
+<string name="female">Female</string>
+<string name="level">Level </string>
+<string name="location">Location </string>
+<string name="north">North </string>
+<string name="center">Center </string>
+<string name="south">South </string>
+<string name="beginner">Beginner </string>
+<string name="advanced">Advanced </string>
+<string name="professional">Professional </string>
+<string name="logout">LogOut </string>
+<string name="welcome">Welcome </string>
+<string name="player_profile">Player Profile </string>
+<string name="player_level">Player level </string>
+<string name="tap_for_phone_number">TAP for Phone Number / CALL </string>
+<string name="search_by_level">Search By Level</string>
+<string name="search">Search</string>
+<string name="search_by_location">Search By Location</string>
+<string name="search_by_name">Search By Name</string>
+<string name="by_name">By Name</string>
+<string name="by_level">By Level</string>
+<string name="by_location">By Location</string>
+<string name="searching">Searching...</string>
+
+
+<string name="please_enter_email">Please enter email</string>
+<string name="please_enter_password">Please enter password</string>
+<string name="please_confirm_password">Please confirm password</string>
+<string name="incorrect_confirmation">Incorrect confirmation</string>
+<string name="reset_password_was_sent_to_your_email">Reset password was sent to your email</string>
+<string name="check_profile">Check profile...</string>
+<string name="registering_User">Registering User...</string>
+<string name="something_went_wrong">Something went wrong</string>
+<string name="please_fill_all_empty_fields">Please fill all empty fields</string>
+<string name="please_chose_level_and_location">Please chose level and location</string>
+<string name="bad_phone_number">Bad phone number</string>
+<string name="you_are_too_young">You are too young</string>
+<string name="you_are_too_Old_for_tennis">You are too Old for tennis</string>
+<string name="there_is_no_players_found">There are no players found</string>
+<string name="choose_level">Choose level</string>
+<string name="choose_location">Choose location</string>
+<string name="please_enter_name">Please enter name</string>
+<string name="not_picked_image">You haven`t picked image</string>
+
+
+
+
+
+
+
+    <string-array name="level_array">
+        <item>"Level"</item>
+        <item>Beginner</item>
+        <item>Advanced</item>
+        <item>Professional</item>
+    </string-array>
+
+    <string-array name="location_array">
+
+        <item>"Location"</item>
+        <item>North</item>
+        <item>Center</item>
+        <item>South</item>
+    </string-array>
+
+</resources>

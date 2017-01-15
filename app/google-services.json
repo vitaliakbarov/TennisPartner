@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "502849576204",
+    "firebase_url": "https://tennispartner-7f25e.firebaseio.com",
+    "project_id": "tennispartner-7f25e",
+    "storage_bucket": "tennispartner-7f25e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502849576204:android:6478f426d0e4cac4",
+        "android_client_info": {
+          "package_name": "com.vetal.tennispartner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "502849576204-g7se3u0at9fsudvktb8ak1rphg2a8j39.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBt0MeOLI-sCPDhT31WEQXVZkWDzL22n7g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

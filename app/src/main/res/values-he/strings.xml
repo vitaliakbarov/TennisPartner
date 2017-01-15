@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TennisPartner</string>
+    <string name="register">הרשמה</string>
+    <string name="enter_your_email">הזן אימייל</string>
+    <string name="enter_password">הזן סיסמה</string>
+    <string name="confirm_password">אמת סיסמה</string>
+    <string name="already_registed">משתמש רשום?</string>
+    <string name="login">כניסה</string>
+    <string name="forget_password">שככת סיסמה?</string>
+    <string name="forget_password_lable">שחזור סיסמה</string>
+    <string name="create_new_password">שחזר סיסמה</string>
+    <string name="profile">פרופיל</string>
+    <string name="first_name">שם פרטי...</string>
+    <string name="last_name">שם משפחה...</string>
+    <string name="phone_number">טלפון...</string>
+    <string name="age">גיל...</string>
+    <string name="ageP">גיל</string>
+    <string name="gender">מין</string>
+    <string name="male">זכר</string>
+    <string name="female">נקבה</string>
+    <string name="level">רמה</string>
+    <string name="location">מיקום</string>
+    <string name="north">צפון</string>
+    <string name="center">מרכז</string>
+    <string name="south">דרום</string>
+    <string name="beginner">מתחיל </string>
+    <string name="advanced">מנוסה </string>
+    <string name="professional">מקצוען </string>
+    <string name="logout">התנתק </string>
+    <string name="welcome">ברוך הבא</string>
+    <string name="player_profile">פרופיל שחקן</string>
+    <string name="player_level">רמת השחקן</string>
+    <string name="tap_for_phone_number">הצג מספר טלפון / חייג</string>
+    <string name="search_by_level">חיפוש לפי רמה</string>
+    <string name="search">חיפוש</string>
+    <string name="search_by_location">חיפוש לפי מיקום</string>
+    <string name="search_by_name">חיפוש לפי שם</string>
+    <string name="by_name">לפי שם</string>
+    <string name="by_level">לפי רמה</string>
+    <string name="by_location">לפי מיקום</string>
+    <string name="searching">מחפש...</string>
+
+    <string name="please_enter_email">הזן אימייל בבקשה</string>
+    <string name="please_enter_password">הזן סיסמה בבקשה</string>
+    <string name="please_confirm_password">אמת סיסמה בבקשה</string>
+    <string name="incorrect_confirmation">אימות שגויי</string>
+    <string name="reset_password_was_sent_to_your_email">שחזור סיסמה נשלך לאימייל</string>
+    <string name="check_profile">בודק פרופיל...</string>
+    <string name="registering_User">רושם משתמש</string>
+    <string name="something_went_wrong">משהוא השתבש</string>
+    <string name="please_fill_all_empty_fields">מלא את כל הפרטים בבקשה</string>
+    <string name="please_chose_level_and_location">מלא מיקום ורמה בבקשה</string>
+    <string name="bad_phone_number">מספר טלפון שגויי</string>
+    <string name="you_are_too_young">אתה צעיר מדי</string>
+    <string name="you_are_too_Old_for_tennis">אתה מבוגר מדי לטניס</string>
+    <string name="there_is_no_players_found">לא נמצאו שחקנים</string>
+    <string name="choose_level">בחר רמה</string>
+    <string name="choose_location">בחר מיקום</string>
+    <string name="please_enter_name">הזן שם בבקשה</string>
+    <string name="not_picked_image">לא בחרת תמונה</string>
+
+    <string-array name="level_array">
+        <item>רמה</item>
+        <item>מתחיל</item>
+        <item>מנוסה</item>
+        <item>מקצוען</item>
+    </string-array>
+
+    <string-array name="location_array">
+
+        <item>מיקום</item>
+        <item>צפון</item>
+        <item>מרכז</item>
+        <item>דרום</item>
+    </string-array>
+</resources>

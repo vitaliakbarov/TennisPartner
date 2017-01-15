@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+
+    android:weightSum="6"
+    android:background="#b2d347"
+    tools:context=".activities.LoginActivity"
+    >
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:src="@drawable/my_icon"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+
+        android:background="@drawable/israel"
+        android:id="@+id/hebrew_main_activity"/>
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/english"
+            android:id="@+id/english_main_activity"/>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/register"
+        android:textSize="32sp"
+        android:textColor="@color/textColor"
+        android:layout_marginTop="30dp"
+        />
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:singleLine="true"
+            android:layout_gravity="center_horizontal"
+            android:inputType="textEmailAddress"
+            android:hint="@string/enter_your_email"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.@_-0123456789+*/#$%^~"
+            android:background="@drawable/rounded_corner"
+            android:textColor="@color/textColor"
+            android:id="@+id/email_address_main_activity"/>
+
+
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            android:singleLine="true"
+
+            android:hint="@string/enter_password"
+            android:layoutDirection="locale"
+            android:textDirection="locale"
+            android:background="@drawable/rounded_corner"
+            android:textColor="@color/textColor"
+            android:id="@+id/password_main_activity"
+            />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+
+        android:singleLine="true"
+        android:hint="@string/confirm_password"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/textColor"
+        android:id="@+id/confirm_password_main_activity"/>
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:text="@string/register"
+        android:background="@drawable/button"
+        android:id="@+id/register_button_main_activity"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold|italic"
+        android:text="@string/already_registed"
+        android:textColor="@color/textColor"
+        android:id="@+id/already_registered_main_activity"/>
+
+</LinearLayout>
+</ScrollView>
