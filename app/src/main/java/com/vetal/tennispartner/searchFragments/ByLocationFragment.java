@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,11 +23,10 @@ import com.vetal.tennispartner.activities.ResultActivity;
 import com.vetal.tennispartner.adaptersAndOthers.ConfigLocation;
 
 
-public class ByLocationFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemSelectedListener {
+public class ByLocationFragment extends Fragment implements View.OnClickListener , AdapterView.OnItemSelectedListener{
 
     private Button searchButton;
     private FirebaseAuth firebaseAuth;
-    private TextView textViewLogout;
     private TextView textViewEmail;
     private Spinner locationSpinner;
 
@@ -43,8 +41,6 @@ public class ByLocationFragment extends Fragment implements View.OnClickListener
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         textViewEmail = (TextView)rootView.findViewById(R.id.text_view_email_fragment_by_location);
-        textViewLogout = (TextView)rootView.findViewById(R.id.logout_fragment_by_location);
-        textViewLogout.setOnClickListener(this);
         searchButton = (Button)rootView.findViewById(R.id.search_button_fragment_by_location);
         searchButton.setOnClickListener(this);
         firebaseAuth = FirebaseAuth.getInstance();
@@ -82,12 +78,6 @@ public class ByLocationFragment extends Fragment implements View.OnClickListener
             startActivity(intent);
             locationSpinner.setSelection(0);
         }
-        else if(view == textViewLogout){
-            firebaseAuth.signOut();
-            Intent intent = new Intent(getActivity(), LoginActivity.class);
-            startActivity(intent);
-            getActivity().finish();
-        }
     }
 
     private void checkUser() {
@@ -109,4 +99,9 @@ public class ByLocationFragment extends Fragment implements View.OnClickListener
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
     }
+
+
 }
+
+
+

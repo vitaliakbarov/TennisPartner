@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +28,7 @@ public class ByLevelFragment extends Fragment implements View.OnClickListener, A
 
     private Button searchButton;
     private FirebaseAuth firebaseAuth;
-    private TextView textViewLogout;
+
     private TextView textViewEmail;
     private Spinner levelSpinner;
     private String level;
@@ -44,8 +43,6 @@ public class ByLevelFragment extends Fragment implements View.OnClickListener, A
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         textViewEmail = (TextView)rootView.findViewById(R.id.text_view_email_fragment_by_level);
-        textViewLogout = (TextView)rootView.findViewById(R.id.logout_fragment_by_level);
-        textViewLogout.setOnClickListener(this);
         searchButton = (Button)rootView.findViewById(R.id.search_button_fragment_by_level);
         searchButton.setOnClickListener(this);
         firebaseAuth = FirebaseAuth.getInstance();
@@ -103,17 +100,11 @@ public class ByLevelFragment extends Fragment implements View.OnClickListener, A
             levelSpinner.setSelection(0);
 
         }
-        else if(view == textViewLogout){
-            firebaseAuth.signOut();
-            Intent intent = new Intent(getActivity(), LoginActivity.class);
-            startActivity(intent);
-            getActivity().finish();
-        }
-
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
         level = levelSpinner.getSelectedItem().toString();
     }
 

@@ -5,10 +5,10 @@
     <string name="enter_your_email">הזן אימייל</string>
     <string name="enter_password">הזן סיסמה</string>
     <string name="confirm_password">אמת סיסמה</string>
-    <string name="already_registed">משתמש רשום?</string>
+    <string name="already_registed"> משתמש רשום? </string>
     <string name="login">כניסה</string>
-    <string name="forget_password">שככת סיסמה?</string>
-    <string name="forget_password_lable">שחזור סיסמה</string>
+    <string name="forgot_password">שכחת סיסמה?</string>
+    <string name="forgot_password_lable">שחזור סיסמה</string>
     <string name="create_new_password">שחזר סיסמה</string>
     <string name="profile">פרופיל</string>
     <string name="first_name">שם פרטי...</string>
@@ -40,6 +40,8 @@
     <string name="by_level">לפי רמה</string>
     <string name="by_location">לפי מיקום</string>
     <string name="searching">מחפש...</string>
+    <string name="loading_profile">טוען פרופיל...</string>
+    <string name="update">עדכן</string>
 
 
     <string name="please_enter_email">הזן אימייל בבקשה</string>

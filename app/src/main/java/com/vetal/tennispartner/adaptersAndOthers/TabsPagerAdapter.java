@@ -4,30 +4,35 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.vetal.tennispartner.searchFragments.ByLevelFragment;
-import com.vetal.tennispartner.searchFragments.ByLocationFragment;
-import com.vetal.tennispartner.searchFragments.ByNameFragment;
+import com.vetal.tennispartner.searchFragments.*;
 
 public class TabsPagerAdapter extends FragmentPagerAdapter {
 
     private int mNumOfTabs;
-    public TabsPagerAdapter(FragmentManager fm, int NumOfTabs) {
+
+    public TabsPagerAdapter( FragmentManager fm, int NumOfTabs) {
         super(fm);
         this.mNumOfTabs = NumOfTabs;
+
+
     }
 
     @Override
     public Fragment getItem(int index) {
         switch (index) {
             case 0:
-                // SearchByName fragment activity
-                return new ByNameFragment();
+
+                return new ByProfileFragment();
+
             case 1:
                 // SearchByLevel fragment activity
                 return new ByLevelFragment();
             case 2:
                 // SearchByLocation fragment activity
                 return new ByLocationFragment();
+            case 3:
+                // SearchByName fragment activity
+                return new ByNameFragment();
         }
         return null;
     }

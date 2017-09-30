@@ -9,7 +9,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
-import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -21,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -89,7 +89,7 @@ public class ProfileActivity extends Activity implements View.OnClickListener, A
 
     private void init() {
 
-        registerButton = (Button)findViewById(R.id.register_button_register_activity);
+    //    registerButton = (Button)findViewById(R.id.register_button_register_activity);
         registerButton.setOnClickListener(this);
         fotoProfile = (ImageView)findViewById(R.id.profile_image_profile_activity);
         fotoProfile.setOnClickListener(this);
@@ -344,5 +344,25 @@ public class ProfileActivity extends Activity implements View.OnClickListener, A
         FirebaseUser user1 = firebaseAuth.getCurrentUser();
         fullName = newUser.getFirstName() + " " + newUser.getLastName();
         databaseReference.child("users").child(fullName).setValue(newUser);
+    }
+
+    public void onRadioButtonClicked2(View view) {
+
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.radio_male_register_activity:
+                if (checked)
+                    // male
+                    gender = "Male";
+                break;
+            case R.id.radio_female_register_activity:
+                if (checked)
+                    // female
+                    gender = "Female";
+                Log.d("D", "female");
+                break;
+        }
     }
 }

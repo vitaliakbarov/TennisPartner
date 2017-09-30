@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,8 +13,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#b2d347"
-    tools:context=".activities.ProfileActivity">
+    android:background="@color/backgroundColor"
+    >
 
    <LinearLayout
        android:layout_width="match_parent"
@@ -22,8 +23,9 @@
 
        <ImageView
            android:layout_width="match_parent"
-           android:layout_height="80dp"
+           android:layout_height="100dp"
            android:src="@drawable/my_icon"
+           android:layout_marginTop="16px"
            />
        <TextView
            android:layout_width="wrap_content"
@@ -38,7 +40,7 @@
            android:layout_width="100dp"
            android:layout_height="100dp"
            android:src="@drawable/add_contact"
-           android:id="@+id/profile_image_profile_activity"/>
+           android:id="@+id/profile_image_profile_activity2"/>
 
 
     <TableLayout
@@ -51,16 +53,17 @@
             android:gravity="center_horizontal">
 
             <EditText
-                android:layout_width="200dp"
-                android:layout_height="40dp"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
                 android:hint="@string/first_name"
+                android:textColorHint="@color/textColor"
                 android:layout_margin="6dp"
 
                 android:inputType="textPersonName"
                 android:background="@drawable/rounded_corner"
                 android:textColor="@color/textColor"
 
-                android:id="@+id/first_name_edit_text_register_activity"/>
+                android:id="@+id/first_name_edit_text_register_activity2"/>
 
         </TableRow>
 
@@ -70,14 +73,15 @@
             android:gravity="center_horizontal">
 
             <EditText
-                android:layout_width="200dp"
-                android:layout_height="40dp"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
                 android:layout_margin="6dp"
                 android:inputType="textPersonName"
                 android:hint="@string/last_name"
+                android:textColorHint="@color/textColor"
                 android:textColor="@color/textColor"
                 android:background="@drawable/rounded_corner"
-                android:id="@+id/last_name_edit_text_register_activity"/>
+                android:id="@+id/last_name_edit_text_register_activity2"/>
         </TableRow>
 
 
@@ -87,14 +91,15 @@
             android:gravity="center_horizontal">
 
             <EditText
-                android:layout_width="200dp"
-                android:layout_height="40dp"
+                android:id="@+id/tel_edit_text_register_activity2"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
                 android:layout_margin="6dp"
-                android:inputType="phone"
-                android:hint="@string/phone_number"
                 android:background="@drawable/rounded_corner"
-                android:textColor="@color/textColor"
-                android:id="@+id/tel_edit_text_register_activity"/>
+                android:hint="@string/phone_number"
+                android:textColorHint="@color/textColor"
+                android:inputType="phone"
+                android:textColor="@color/textColor" />
 
         </TableRow>
 
@@ -104,14 +109,15 @@
             android:gravity="center_horizontal">
 
             <EditText
-                android:layout_width="200dp"
-                android:layout_height="40dp"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
                 android:hint="@string/age"
+                android:textColorHint="@color/textColor"
                 android:inputType="number"
                 android:textColor="@color/textColor"
                 android:layout_margin="6dp"
                 android:background="@drawable/rounded_corner"
-                android:id="@+id/age_edit_text_register_activity"/>
+                android:id="@+id/age_edit_text_register_activity2"/>
         </TableRow>
 
 
@@ -140,18 +146,20 @@
                 android:layout_marginTop="6dp"
                 android:gravity="center">
 
-                <RadioButton android:id="@+id/radio_male_register_activity"
+                <RadioButton android:id="@+id/radio_male_register_activity2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/male"
+                    android:textColor="@color/textColor"
                     android:checked="true"
-                    android:onClick="onRadioButtonClicked"/>
-                <RadioButton android:id="@+id/radio_female_register_activity"
+                    android:onClick="onRadioButtonClicked2"/>
+                <RadioButton android:id="@+id/radio_female_register_activity2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="@string/female"
-                    android:onClick="onRadioButtonClicked"/>
+                    android:textColor="@color/textColor"
+                    android:onClick="onRadioButtonClicked2"/>
             </RadioGroup>
 
 
@@ -165,12 +173,15 @@
             android:gravity="center_horizontal">
 
             <Spinner
-                android:id="@+id/level_spinner_register_activity"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
+                android:id="@+id/level_spinner_register_activity2"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
                 android:textAlignment="center"
                 android:textColor="@color/textColor"
                 android:background="@drawable/spinner_rounded"
+                android:spinnerMode="dropdown"
+                android:dropDownVerticalOffset="40dp"
+                android:dropDownWidth="200dp"
                 />
 
 
@@ -184,26 +195,46 @@
             >
 
             <Spinner
-                android:id="@+id/location_spinner_register_activity"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
+                android:id="@+id/location_spinner_register_activity2"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
                 android:textAlignment="center"
                 android:textColor="@color/textColor"
                 android:background="@drawable/spinner_rounded"
+                android:spinnerMode="dropdown"
+                android:dropDownVerticalOffset="40dp"
+                android:dropDownWidth="200dp"
                 />
 
         </TableRow>
 
 
     </TableLayout>
+
        <Button
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
+           android:layout_width="@dimen/button_width"
+           android:layout_height="@dimen/button_height"
+           android:layout_gravity="center_horizontal"
            android:layout_marginTop="30dp"
-           android:text="@string/register"
+           android:text="@string/update"
            android:background="@drawable/button"
-           android:id="@+id/register_button_register_activity"
+           android:id="@+id/register_button_register_activity2"
            />
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/logout"
+           android:textSize="16sp"
+           android:layout_marginTop="10dp"
+           android:id="@+id/logout_fragment_by_name"
+           android:textColor="#fd0303"/>
+       <ImageView
+           android:layout_width="80dp"
+           android:layout_height="80dp"
+           android:layout_gravity="center_horizontal"
+           android:layout_marginTop="20dp"
+           android:src="@drawable/swipe"
+           android:id="@+id/swipe_image_view"/>
        </LinearLayout>
 
 </LinearLayout>

@@ -24,9 +24,11 @@ public class SearchPlayerFragments extends AppCompatActivity {
     private void init() {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.by_name)));
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.profile)));
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.by_level)));
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.by_location)));
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.by_name)));
+
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager)findViewById(R.id.pager);

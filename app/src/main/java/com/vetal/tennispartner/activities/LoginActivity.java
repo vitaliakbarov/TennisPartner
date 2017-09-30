@@ -2,15 +2,22 @@ package com.vetal.tennispartner.activities;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.text.Editable;
+import android.text.InputType;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,8 +26,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.vetal.tennispartner.R;
+import com.vetal.tennispartner.adaptersAndOthers.SettingsFragment;
 
-public class LoginActivity extends Activity implements View.OnClickListener {
+import java.util.Locale;
+
+public class LoginActivity extends Activity implements View.OnClickListener, com.vetal.tennispartner.adaptersAndOthers.OnCompleteListener{
 
     private EditText emailAddress;
     private EditText password;
@@ -29,6 +39,8 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     private Button registerButton;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
+    private ImageView settingsImage;
+    private Locale myLocale;
 
 
     @Override
@@ -41,7 +53,75 @@ public class LoginActivity extends Activity implements View.OnClickListener {
 
         checkUserConnected();
         init();
+        passwordMask();
 
+    }
+
+    private void passwordMask() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && isRTL(getApplicationContext())) {
+
+            // Force a right-aligned text entry, otherwise latin character input,
+            // like "abc123", will jump to the left and may even disappear!
+            password.setTextDirection(View.TEXT_DIRECTION_RTL);
+
+            // Make the "Enter password" hint display on the right hand side
+            password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        }
+
+        password.addTextChangedListener(new TextWatcher() {
+
+            boolean inputTypeChanged;
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                // Workaround https://code.google.com/p/android/issues/detail?id=201471 for Android 4.4+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && isRTL(getApplicationContext())) {
+                    if (s.length() > 0) {
+                        if (!inputTypeChanged) {
+
+                            // When a character is typed, dynamically change the EditText's
+                            // InputType to PASSWORD, to show the dots and conceal the typed characters.
+                            password.setInputType(InputType.TYPE_CLASS_TEXT |
+                                    InputType.TYPE_TEXT_VARIATION_PASSWORD |
+                                    InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+
+                            // Move the cursor to the correct place (after the typed character)
+                            password.setSelection(s.length());
+
+                            inputTypeChanged = true;
+                        }
+                    } else {
+
+                        // Reset EditText: Make the "Enter password" hint display on the right
+                        password.setInputType(InputType.TYPE_CLASS_TEXT |
+                                InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+
+                        inputTypeChanged = false;
+                    }
+                }
+
+            }
+        });
+    }
+
+
+
+
+    public static boolean isRTL(Context context) {
+        // Define a boolean resource as "true" in res/values-ldrtl
+        // and "false" in res/values
+        return context.getResources().getConfiguration().getLayoutDirection()
+             == View.LAYOUT_DIRECTION_RTL;
+        // Another way:
+        // return context.getResources().getConfiguration().getLayoutDirection()
+        //     == View.LAYOUT_DIRECTION_RTL;
     }
 
 
@@ -65,6 +145,8 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         loginButton.setOnClickListener(this);
         registerButton.setOnClickListener(this);
         progressDialog = new ProgressDialog(this);
+        settingsImage = (ImageView)findViewById(R.id.settings);
+        settingsImage.setOnClickListener(this);
     }
 
     private void userLogin(){
@@ -126,9 +208,52 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         }
         else if(view == registerButton){
             // go to ProfileActivity
-            Intent intent = new Intent(this,MainActivity.class);
+            Intent intent = new Intent(this,RegisterActivity.class);
             startActivity(intent);
             finish();
         }
+        if(view == settingsImage){
+
+            SettingsFragment fragment = new SettingsFragment();
+            fragment.show(getFragmentManager(),"");
+
+
+        }
     }
+
+    @Override
+    public void onComplete(boolean result) {
+
+
+        if(result){
+            changeLang("iw");
+            Intent refresh = new Intent(this, LoginActivity.class);
+            startActivity(refresh);
+            finish();
+        }
+        if (!result){
+            changeLang("en");
+            Intent refresh = new Intent(this, LoginActivity.class);
+            startActivity(refresh);
+            finish();
+        }
+    }
+    public void changeLang(String lang) {
+        if (lang.equalsIgnoreCase(""))
+            return;
+        myLocale = new Locale(lang);
+        saveLocale(lang);
+        Locale.setDefault(myLocale);
+        android.content.res.Configuration config = new android.content.res.Configuration();
+        config.locale = myLocale;
+        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
+    }
+    public void saveLocale(String lang) {
+        String langPref = "Language";
+        SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(langPref, lang);
+        editor.commit();
+    }
+
 }

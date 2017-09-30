@@ -1,13 +1,10 @@
 package com.vetal.tennispartner.activities;
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
+import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -28,7 +25,7 @@ public class PlayerProfileActivity extends Activity implements View.OnClickListe
     private TextView level;
     private TextView gender;
     private TextView phoneNumber;
-    private TextView logout;
+
     private ImageView profileImage;
     private User u;
     private FirebaseAuth firebaseAuth;
@@ -47,7 +44,7 @@ public class PlayerProfileActivity extends Activity implements View.OnClickListe
 
     private void init() {
         firebaseAuth = FirebaseAuth.getInstance();
-        logout = (TextView) findViewById(R.id.logout_player_profile_activity);
+
         fullName = (TextView) findViewById(R.id.full_name_player_profile_activity);
         age = (TextView) findViewById(R.id.age_player_profile_activity);
         location = (TextView) findViewById(R.id.location_player_profile_activity);
@@ -63,13 +60,14 @@ public class PlayerProfileActivity extends Activity implements View.OnClickListe
         ConfigGender configGender = new ConfigGender(this,gen);
 
 
-        logout.setOnClickListener(this);
+
         fullName.setText(u.getFirstName() + " " + u.getLastName());
         age.setText(getString(R.string.ageP) + ": " + u.getAge());
         location.setText(getString(R.string.location) + ": " + configLocation.fromDB());
         level.setText(getString(R.string.player_level) + ": " + configLevel.fromDB());
         gender.setText(configGender.fromDB());
         phoneNumber.setOnClickListener(this);
+        phoneNumber.setPaintFlags(phoneNumber.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         Picasso.with(this).load(u.getImageUri()).into(profileImage);
     }
 
@@ -78,13 +76,6 @@ public class PlayerProfileActivity extends Activity implements View.OnClickListe
     public void onClick(View view) {
 
 
-        if (view == logout) {
-            firebaseAuth.signOut();
-            finish();
-            Intent intent = new Intent(this, LoginActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-        }
         if (view == phoneNumber && secondClick == true) {
 
             phoneNumber.setText(u.getTelephone());

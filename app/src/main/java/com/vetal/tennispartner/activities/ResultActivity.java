@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.firebase.client.DataSnapshot;
@@ -16,8 +16,8 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.Query;
 import com.firebase.client.ValueEventListener;
-import com.vetal.tennispartner.adaptersAndOthers.CompleteInterface;
 import com.vetal.tennispartner.R;
+import com.vetal.tennispartner.adaptersAndOthers.CompleteInterface;
 import com.vetal.tennispartner.adaptersAndOthers.ConfigLevel;
 import com.vetal.tennispartner.adaptersAndOthers.ConfigLocation;
 import com.vetal.tennispartner.adaptersAndOthers.User;
@@ -40,7 +40,7 @@ public class ResultActivity extends Activity implements AdapterView.OnItemClickL
         setContentView(R.layout.activity_result);
 
         listView = (ListView)findViewById(R.id.list_view_result_activity);
-        RelativeLayout result = (RelativeLayout)findViewById(R.id.result_activity);
+        LinearLayout result = (LinearLayout) findViewById(R.id.result_activity);
         listView.setOnItemClickListener(this);
 
         Intent intent = getIntent();

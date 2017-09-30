@@ -1,12 +1,7 @@
 package com.vetal.tennispartner.adaptersAndOthers;
 
 
-import android.net.Uri;
-import android.util.Log;
-
-import com.fasterxml.jackson.databind.DeserializationConfig;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.firebase.database.DataSnapshot;
 
 import java.io.Serializable;
 
@@ -26,6 +21,19 @@ public class User implements Serializable{
 
     public User() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
+    }
+
+    public User(DataSnapshot snapshot){
+        this.firstName = (String ) snapshot.child("firstName").getValue();
+        this.lastName = (String ) snapshot.child("lastName").getValue();
+        this.age = (String ) snapshot.child("age").getValue();
+        this.gender = (String ) snapshot.child("gender").getValue();
+        //this.email = (String ) snapshot.child("").getValue();
+        this.level = (String ) snapshot.child("level").getValue();
+        this.location = (String ) snapshot.child("location").getValue();
+        this.telephone = (String ) snapshot.child("telephone").getValue();
+        this.imageUri = (String ) snapshot.child("imageUri").getValue();
+
     }
 
 

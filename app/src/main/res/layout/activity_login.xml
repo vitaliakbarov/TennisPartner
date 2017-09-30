@@ -15,14 +15,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     android:weightSum="6"
-    android:background="#b2d347"
+    android:background="@color/backgroundColor"
     tools:context=".activities.LoginActivity">
 
 
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/settings"
+        android:id="@+id/settings"/>
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
         android:src="@drawable/my_icon"
+        android:layout_marginTop="16px"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -35,13 +42,14 @@
 
 
         <EditText
-            android:layout_width="200dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
             android:layout_marginTop="6dp"
             android:layout_gravity="center_horizontal"
             android:inputType="textEmailAddress"
             android:singleLine="true"
             android:hint="@string/enter_your_email"
+            android:textColorHint="@color/textColor"
             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.@_-0123456789+*/#$%^~"
             android:textColor="@color/textColor"
             android:background="@drawable/rounded_corner"
@@ -50,39 +58,43 @@
 
 
         <EditText
-            android:layout_width="200dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
             android:layout_marginTop="10dp"
-            android:inputType="text"
-
+            android:inputType="textPassword"
             android:layout_gravity="center_horizontal"
             android:textDirection="locale"
             android:background="@drawable/rounded_corner"
             android:hint="@string/enter_password"
+            android:textColorHint="@color/textColor"
             android:textColor="@color/textColor"
-            android:id="@+id/password_login_activity"/>
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:text="@string/login"
-        android:background="@drawable/button"
-        android:id="@+id/login_button_login_activity"
-       />
+            android:id="@+id/password_login_activity"
+
+            />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textStyle="bold|italic"
-        android:text="@string/forget_password"
-        android:layout_marginStart="10dp"
+        android:text="@string/forgot_password"
+
+        android:layout_gravity="center_horizontal"
         android:textColor="@color/textColor"
         android:id="@+id/forget_password_login_activity"/>
 
     <Button
-        android:layout_width="150dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:text="@string/login"
+        android:background="@drawable/button"
+        android:id="@+id/login_button_login_activity"
+       />
+
+    <Button
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
         android:layout_marginTop="32dp"
         android:text="@string/register"
         android:layout_gravity="center_horizontal"
